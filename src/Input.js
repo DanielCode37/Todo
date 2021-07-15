@@ -2,7 +2,6 @@ import { StyleSheet, View, Button, TextInput } from 'react-native';
 import React from 'react';
 
 export default function Input(props) {
-    const [items, setItems] = props.items;
 
     return (
         <View style={styles.parent}>
@@ -13,7 +12,6 @@ export default function Input(props) {
 }
 
 function press(setItems) {
-    setItems("tt")
     alert();
 }
 
