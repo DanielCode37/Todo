@@ -1,21 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, ImageBackground } from 'react-native';
+import Input from './src/Input'
+import List from './src/List'
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+	const [items, setItems] = useState([])
+	const Todos = ["tt"]
+	return (
+		<View style={styles.container}>
+			<ImageBackground source={require('./assets/background.jpg')} resizeMode='cover' style={{ width: 'auto', height: '100%' }}>
+				<List items={items}></List>
+				<Input items={[items, setItems]}></Input>
+			</ImageBackground>
+		</View>
+	);
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+	container: {
+		height: '100%'
+	},
 });
